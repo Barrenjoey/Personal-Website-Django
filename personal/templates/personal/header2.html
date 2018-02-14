@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Jake Van der Meer</title>
+	<meta charset="utf-8" />
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'personal/css/bootstrap.min.css' %}" type = "text/css"/>
+	<meta name="viewport" content = "width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
+	
+	<style type="text/css">
+		html,
+		body {
+		  height:100%
+		}
+		div#border1 {
+			border-bottom: 4px solid;
+		}
+		div#border2 {
+			border-right: 4px solid;
+		}
+		div#border3 {
+			border-left: 4px solid;
+		}		
+		ul#navMenu {
+			margin-top: 120px;
+		}
+		@media all and (max-width: 800px) {
+			div#border2 {
+				border-right: none;
+			}
+			div#border3 {
+				border-left: none;
+			}			
+		}
+	</style>
+</head>
+
+<body class="body" style="background-color:#f6f6f6">
+	<div class="container" style="min-height:95%; ">
+		<div class="row" id="border1">
+			  <div class="col-sm-3">
+				  <br>
+				  <center>
+					<img src="{% static 'personal/img/profile.jpg' %}" class="rotateImage rounded img-fluid img-thumbnail" style='max-height:250px;' alt="Responsive image">
+					<!--style type="text/css">
+					img {transform: rotate(180deg);}
+					</style--> 
+				  </center>	
+			  </div>
+			  <div class="col-sm-9" id="border3">
+				  <br>
+				  <br>
+				  <center>
+				  <h1 style="font-family:verdana;"><b>Jake Van der Meer</b></h1>
+				  </center>
+				  <ul class="nav justify-content-center " id="navMenu">
+					  <li class="nav-item" style="border:2px solid Black;">
+						<a class="nav-link" href="/" style="font-size:20px; color:Black"><b>Home</b></a>
+					  </li>
+					  <li class="nav-item" style="border:2px solid Black;">
+						<a class="nav-link" href="/blog/" style="font-size:20px; color:Black"><b>Projects</b></a>
+					  </li>
+					  <li class="nav-item" style="border:2px solid Black;">
+						<a class="nav-link" href="#" style="font-size:20px; color:Black"><b>Accreditation</b></a>
+					  </li>
+					</ul>
+				  <br>	
+			  </div>
+		</div>
+
+		<div class="row">
+		  <div class="col-sm-3">
+		  <br>
+		  <br>
+			  <ul class="nav flex-column ">
+			  <center>
+				<h4><b>Personal Links</b></h4>
+					<li><a href='/contact/'>Contact</a></li>
+					<li><a href='/blog/'>GitHub</a></li>
+					<li><a href='/blog/'>LinkedIn</a></li>
+					<li><a href='/'>Resume</a></li>
+			  </center>	
+			  </ul>
+		  </div> <!--col-sm-2-->
+		  <div class="col-sm-9" id="border3">
+		  
+			<div class='container-fluid'>
+			<br><br>
+			   {% block content %}
+			   {% endblock %}	
+			</div>
+		  </div>
+		</div> 
+	</div><hr>
+	<footer>
+		<div class="container-fluid" style='margin-left:15px'>
+			<p><a href="#" target="blank">Contact</a> | <a href="#" target="blank">LinkedIn</a></p>
+		</div>
+	</footer>	

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Jake Van der Meer</title>
+	<meta charset="utf-8" />
+	{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'personal/css/bootstrap.min.css' %}" type = "text/css"/>
+	<meta name="viewport" content = "width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
+	
+	<style type="text/css">
+		html,
+		body {
+		  height:100%
+		}
+		div#border1 {
+			border-right: 3px solid;
+		}
+		div#banner {
+			padding-left:20px;
+			padding-bottom:10px;
+			border-bottom: 3px solid;
+		}
+		div#links {
+			margin-top: 20px;
+		}
+		ul#linksMenu {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			width: 200px;
+			background-color: #f6f6f6;
+		}	
+		li a#linksMenu1 {
+			display: block;
+			color: black;
+			text-align: center;
+			padding: 10px 40px;
+			text-decoration: none;
+			font-size:20px;
+			border-bottom: 2px solid;
+		}
+		ul#navMenu {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			background-color: #f6f6f6;
+			border-bottom: 3px solid;
+		}
+		li#navMenu1 {
+			float: left;
+		}
+		li a#navMenu2 {	
+			display: block;
+			color: black;
+			text-align: center;
+			padding: 10px 40px;
+			text-decoration: none;
+			font-size:20px;
+		}
+		li a:hover {
+			background-color: rgba(183, 183, 183, 0.3);
+		}		
+		div#profile {
+			padding: 15px;
+			border-bottom: 3px solid;
+		}		
+		@media all and (max-width: 800px) {
+			div#border1 {
+				border-right: none;
+			}
+			h1 {
+				font-size:8vw;
+				text-align: center;
+			}
+			li#navMenu1 {
+				justify-content:center;
+			}	
+			li a#navMenu2 {
+				font-size:5vw;
+				padding: 10px 10px;
+			}
+			img {
+				max-width:100%;
+			}
+		}
+	</style>
+</head>
+
+<body class="body" style="background-image:url({% static 'personal/img/03.jpg' %})">
+	<div class="container pt-3" style="min-height:99%;background-color:#f6f6f6">
+		<div class="row no-gutters">
+			  <div class="col-sm-3" id="border1">
+				<br>
+				<div id="profile">  
+				  <center>
+					<img src="{% static 'personal/img/profile2.jpg' %}" class="rotateImage rounded img-fluid img-thumbnail" style='max-height:380px;' alt="Responsive image">
+					<!--style type="text/css">
+					img {transform: rotate(180deg);}
+					</style--> 
+				  </center>	
+				</div>	
+				<div id="links">
+				  <center>
+					<ul id="linksMenu">
+					  <h3>Personal Links</h3>
+					  <li><a href='/contact/' id="linksMenu1">Contact</a></li>
+					  <li><a href='https://github.com/Barrenjoey' id="linksMenu1">GitHub</a></li>
+					  <li><a href='https://www.linkedin.com/in/jakob-van-der-meer-039298155/' id="linksMenu1">LinkedIn</a></li>
+					  <li><a download="Resume" href="{% static 'personal/resume/Resume of Jakob Van der Meer4.pdf' %}" id="linksMenu1">Resume</a></li>
+				    </ul>
+				  </center>
+				</div>	
+			  </div>
+			  <div class="col-sm-9">
+				  <br>
+				  <div id="banner">
+					<h1>Jakob Van der Meer</h1>
+				  </div>
+				  <ul id="navMenu">
+					<li id="navMenu1"><a href='/' id="navMenu2">Home</a></li>
+					<li id="navMenu1"><a href='/blog/' id="navMenu2">Projects</a></li>
+					<li id="navMenu1"><a href='/accreditation/' id="navMenu2">Accreditation</a></li>
+				  </ul>				 
+				  <div class='container-fluid'>
+				  <br>
+					{% block content %}
+					{% endblock %}
+				  </div>
+				  <br>	
+			  </div>
+		  </div>
+	</div><hr>
+</body>
